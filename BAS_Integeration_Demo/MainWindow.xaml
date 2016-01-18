@@ -1,8 +1,51 @@
 ﻿<Window x:Class="BAS_Integeration_Demo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="BAS Integration" Height="800" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Window.CommandBindings>
+        <CommandBinding Command="ApplicationCommands.Open"
+                        Executed="OpenCmdExecuted"
+                        CanExecute="OpenCmdCanExecute"/>
+        <CommandBinding Command="ApplicationCommands.Save"
+                        Executed="SaveCmdExecuted"
+                        CanExecute="SaveCmdCanExecute"/>
+                      
+    </Window.CommandBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top"
+            HorizontalAlignment="Left" Background="White" BorderBrush="Black">
+            <MenuItem Header="_File">
+                <MenuItem Command="ApplicationCommands.Open"/>
+                <MenuItem Command="ApplicationCommands.Save"/>
+                <Separator/>
+                <MenuItem Header="_Exit"
+                          MouseEnter=""
+                          MouseLeave=""
+                          Click=""/>
+            </MenuItem>
+            <MenuItem Header="_Reports">
+                <MenuItem Header="_View Alarm Reports"
+                          MouseEnter=""
+                          MouseLeave=""
+                          Click=""/>
+                <MenuItem Header="_View Trend Reports"
+                          MouseEnter=""
+                          MouseLeave=""
+                          Click=""/>
+            </MenuItem>
+            <MenuItem Header="_Analytics">
+                <MenuItem Header="_View Analytics"
+                          MouseEnter=""
+                          MouseLeave=""
+                          Click=""/>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+            <MenuItem Header="_Scheduling"
+                          MouseEnter=""
+                          MouseLeave=""
+                          Click=""/>
+            </MenuItem>
+        </Menu>
+    </DockPanel>
 </Window>
